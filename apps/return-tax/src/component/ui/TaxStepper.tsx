@@ -1,17 +1,14 @@
 'use client'
-
-import { FormStepper } from '@island.is/island-ui/core'
+import { Box, Button, FormStepper, Text } from '@island.is/island-ui/core'
 import { useState } from 'react'
-import DataCollectionForm from '../../module/DataCollectionForm'
-import RevenueForm from '../../module/RevenueForm'
 import AssetsForm from '../../module/AssetsForm'
+import DataCollectionForm from '../../module/DataCollectionForm'
+import DataRetrievalConsent from '../../module/DataConsent'
 import InterestExpensesForm from '../../module/InterestExpensesForm'
 import OtherDebtsExpenses from '../../module/OtherDebtsExpenses'
-import { Box, Button, Text } from '@island.is/island-ui/core'
-import DataRetrievalConsent from '../../module/DataConsent'
+import RevenueForm from '../../module/RevenueForm'
 import StepperResult from '../../module/StepperResult'
 import SectionWrapper from '../layout/SectionWrapper'
-import { purple100 } from '@island.is/island-ui/theme'
 
 type FormDataMap = {
   [key: number]: any
@@ -39,7 +36,7 @@ const getStepIndex = (step: number, subStep: number) => {
   return step
 }
 
-const CustomStepper = () => {
+const TaxStepper = () => {
   const [step, setStep] = useState<number>(0)
   const [subStep, setSubStep] = useState<number>(0)
   const [formData, setFormData] = useState<FormDataMap>({})
@@ -186,4 +183,4 @@ const CustomStepper = () => {
   )
 }
 
-export default CustomStepper
+export default TaxStepper

@@ -14,6 +14,7 @@ import {
   Divider,
 } from '@island.is/island-ui/core'
 import NextSubmit from '../component/ui/NextSubmit'
+import { Icon } from 'libs/island-ui/core/src/lib/IconRC/Icon'
 
 // Define the validation schema using Zod
 const incomeItemSchema = z.object({
@@ -221,15 +222,13 @@ const RevenueForm: React.FC<RevenueFormProps> = ({
           ))}
 
           <Box display="flex" justifyContent="flexEnd" marginTop={2}>
-            <Button
-              variant="ghost"
+            <span
               onClick={() => appendSubsidy({ type: '', amount: '' })}
-              icon="add"
-              iconType="outline"
-              size="small"
+              className='flex gap-2 items-center'
             >
-              Bæta við línu
-            </Button>
+              <Icon type='outline' icon='add' />
+              <Text fontWeight='semiBold' color='blue400'>Bæta við línu</Text>
+            </span>
           </Box>
         </Box>
 

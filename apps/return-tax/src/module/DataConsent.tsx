@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
 import {
   Box,
-  Text,
   Checkbox,
   Link,
   Stack,
-  Icon,
+  Text
 } from '@island.is/island-ui/core'
+import React, { useState } from 'react'
 import NextSubmit from '../component/ui/NextSubmit'
-import ArchiveIcon from '../icons/ArchiveIcon'
+import { Icon } from 'libs/island-ui/core/src/lib/IconRC/Icon'
 
 interface DataConsentProps {
   onNext?: () => void
@@ -36,14 +35,12 @@ const DataRetrievalConsent: React.FC<DataConsentProps> = ({
         </Text>
 
         {/* Info line with icon */}
-        <Box display="flex" alignItems="center" marginY={3}>
-          <Box marginRight={2} color="blue400">
-            <ArchiveIcon />
-          </Box>
+        <div className='w-full flex items-center gap-2'>
+          <Icon type='outline' icon='archive' color='blue400' />
           <div className="w-[660px] justify-start text-slate-900 text-xl font-semibold leading-loose">
             Eftirfarandi gögn verða sótt rafrænt með þínu samþykki.
           </div>
-        </Box>
+        </div>
 
         {/* Data source information */}
         <Box>

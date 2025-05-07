@@ -71,25 +71,24 @@ const DataCollectionForm: React.FC<DataCollectionFormProps> = ({
   }
 
   return (
-    <Box
+    <div
       className="w-full"
-      padding={4}
-      background="blue100"
-      borderRadius="large"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack space={3}>
-          <Box marginBottom={3}>
+          <Box>
             <Text variant="h2" as="h1">
               Skráningarform
             </Text>
+            <Text>Vinsamlegast leiðréttið eftirfarandi ef þörf er á</Text>
           </Box>
-          <div className="flex gap-4">
+          <div className="w-full flex gap-4">
             <Controller
               name="nafn"
               control={control}
               render={({ field }) => (
                 <Input
+                  containerClassName='w-full'
                   {...field}
                   label="Nafn"
                   placeholder="Fullt nafn"
@@ -105,6 +104,7 @@ const DataCollectionForm: React.FC<DataCollectionFormProps> = ({
               control={control}
               render={({ field }) => (
                 <Input
+                  containerClassName='w-full'
                   {...field}
                   label="Kennitala"
                   placeholder="Kennitala (10 tölustafir)"
@@ -121,6 +121,7 @@ const DataCollectionForm: React.FC<DataCollectionFormProps> = ({
               control={control}
               render={({ field }) => (
                 <Input
+                  containerClassName='w-full'
                   {...field}
                   label="Símanúmer"
                   placeholder="Símanúmer"
@@ -138,6 +139,7 @@ const DataCollectionForm: React.FC<DataCollectionFormProps> = ({
                 <Input
                   {...field}
                   label="Netfang"
+                  containerClassName='w-full'
                   placeholder="Netfang"
                   hasError={!!errors.netfang}
                   errorMessage={errors.netfang?.message}
@@ -170,7 +172,7 @@ const DataCollectionForm: React.FC<DataCollectionFormProps> = ({
           </Box>
         </Stack>
       </form>
-    </Box>
+    </div>
   )
 }
 
