@@ -84,7 +84,8 @@ export interface InputProps extends InputComponentProps {
   buttons?: InputButton[]
   max?: number | string
   min?: number | string
-  step?: string
+  step?: string;
+  containerClassName?: string
 }
 
 export interface AsideProps {

@@ -67,6 +67,7 @@ export const Input = forwardRef(
       autoExpand,
       loading,
       buttons,
+      containerClassName,
       ...inputProps
     } = props
     const [hasFocus, setHasFocus] = useState(false)
@@ -113,7 +114,7 @@ export const Input = forwardRef(
     }, [autoExpand?.maxHeight, autoExpand?.on, inputRef])
 
     return (
-      <div>
+      <div className={containerClassName}>
         {/* If size is xs then the label is above the input box */}
         {size === 'xs' && label && (
           <label
